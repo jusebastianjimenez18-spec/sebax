@@ -45,6 +45,8 @@ Con esto la app calcula de manera automática la ganancia y el numero de venta d
 - El sistema debe mostrar el total a pagar en su totalidad por el pedido de los productos seleccionados del carrito.
 
 **DIAGRAMA UML**
+<img width="882" height="778" alt="image" src="https://github.com/user-attachments/assets/7ca22a09-282c-4dcf-a761-8d72ffd7301a" />
+
 
 **Registro y cálculo de ganancias de la tienda**
 
