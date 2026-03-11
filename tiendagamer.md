@@ -52,10 +52,6 @@ Con esto la app calcula de manera automática la ganancia y el numero de venta d
 
 Sistema Tienda
 
-&lt;<extend&gt;>
-
-&lt;<extend&gt;>
-
 Admin.de la
 
 tienda
@@ -85,3 +81,4 @@ Total = precio del producto\*cantidad
 **Postcondición**
 
 El costo total de la compra ha sido calculado y mostrado al usuario para proceder con su debido cobro.
+
