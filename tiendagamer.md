@@ -45,7 +45,6 @@ Con esto la app calcula de manera automática la ganancia y el numero de venta d
 - El sistema debe mostrar el total a pagar en su totalidad por el pedido de los productos seleccionados del carrito.
 
 **DIAGRAMA UML**
-<img width="882" height="778" alt="image" src="https://github.com/user-attachments/assets/7ca22a09-282c-4dcf-a761-8d72ffd7301a" />
 
 
 **Registro y cálculo de ganancias de la tienda**
@@ -81,4 +80,66 @@ Total = precio del producto\*cantidad
 **Postcondición**
 
 El costo total de la compra ha sido calculado y mostrado al usuario para proceder con su debido cobro.
+
+Pseudocódigo:
+Algoritmo Gestion_Tienda_Gamer
+    // Definición de variables globales
+    Definir total_diario, total_mensual Como Real
+    Definir venta_actual, precio_unitario Como Real
+    Definir cantidad, opcion, i Como Entero
+    Definir nombre_producto Como Cadena
+    
+    total_mensual <- 0
+    
+    Escribir "--- SISTEMA DE GESTIÓN TIENDA GAMER 2026 ---"
+    
+    Repetir
+        total_diario <- 0
+        Escribir ""
+        Escribir "Menú Principal:"
+        Escribir "1. Registrar ventas del día"
+        Escribir "2. Consultar Reporte Mensual"
+        Escribir "3. Salir"
+        Leer opcion
+        
+        Segun opcion Hacer
+            1:
+                Escribir "Iniciando registro de ventas diarias..."
+                Repetir
+                    Escribir "Ingrese nombre del producto (o 'fin' para cerrar el día):"
+                    Leer nombre_producto
+                    
+                    Si nombre_producto <> "fin" Entonces
+                        Escribir "Ingrese precio unitario de ", nombre_producto, ":"
+                        Leer precio_unitario
+                        Escribir "Ingrese cantidad vendida:"
+                        Leer cantidad
+                        
+                        // Cálculo según el curso de eventos del UML
+                        venta_actual <- precio_unitario * cantidad
+                        total_diario <- total_diario + venta_actual
+                        
+                        Escribir "Venta registrada: $", venta_actual
+                        Escribir "-----------------------------------"
+                    FinSi
+                Hasta Que nombre_producto = "fin"
+                
+                // Actualización de la base de datos (simulada)
+                total_mensual <- total_mensual + total_diario
+                Escribir "CIERRE DEL DÍA: El total diario es: $", total_diario
+                
+            2:
+                Escribir "--- REPORTE MENSUAL ---"
+                Escribir "Ganancias acumuladas hasta hoy: $", total_mensual
+                Escribir "-----------------------"
+                
+            3:
+                Escribir "Saliendo del sistema..."
+            De Otro Modo:
+                Escribir "Opción no válida."
+        FinSegun
+        
+    Hasta Que opcion = 3
+    
+FinAlgoritmo
 
